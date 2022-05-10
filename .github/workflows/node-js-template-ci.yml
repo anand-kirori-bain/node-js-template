@@ -22,13 +22,13 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
-    - name: Scan Repo in SonarQube
-      uses: sonarsource/sonarqube-scan-action@master
-      env:
-          #SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_TOKEN: "cb8475faf9631ba8a1f8ccdb8bf1c25239bb6549"
-          #SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SONAR_HOST_URL: "http://ngss-devops-sonarqube-dev.bain.io"
+    #- name: Scan Repo in SonarQube
+    #  uses: sonarsource/sonarqube-scan-action@master
+    #  env:
+    #      #SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    #      SONAR_TOKEN: "cb8475faf9631ba8a1f8ccdb8bf1c25239bb6549"
+    #      #SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+    #      SONAR_HOST_URL: "http://ngss-devops-sonarqube-dev.bain.io"
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
