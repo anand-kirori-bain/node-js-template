@@ -9,4 +9,7 @@
   "keywords": [],
   "author": "Anand Kirori",
   "license": "ISC"
+  "publishConfig": {
+   "@anand-kirori-bain:registry": "https://npm.pkg.github.com"
+ }
 }
