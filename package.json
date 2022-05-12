@@ -8,8 +8,8 @@
   },
   "keywords": [],
   "author": "Anand Kirori",
-  "license": "ISC"
+  "license": "ISC",
   "publishConfig": {
    "@anand-kirori-bain:registry": "https://npm.pkg.github.com"
- }
+  }
 }
