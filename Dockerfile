@@ -21,7 +21,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 COPY sonarqube.cer /opt/sonarqube.cer
 
-RUN keytool -import -trustcacerts -keystore /opt/security/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
+RUN keytool -import -trustcacerts -keystore /opt/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 
 RUN chmod +x /entrypoint.sh
 
