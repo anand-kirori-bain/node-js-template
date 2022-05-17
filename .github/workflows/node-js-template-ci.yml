@@ -30,6 +30,8 @@ jobs:
         args: >
           -Djavax.net.ssl.trustStore="/opt/cacerts"
           -Djavax.net.ssl.trustStorePassword=changeit
+          -Djavax.net.debug=all
+          -X
     #- name: Scan Repo in SonarQube
     #  uses: sonarsource/sonarqube-scan-action@master
     #  env:
