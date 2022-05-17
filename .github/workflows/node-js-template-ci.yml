@@ -23,7 +23,7 @@ jobs:
     - name: Checkout Repo
       uses: actions/checkout@v3
     - name: Scan Repo in SonarQube
-      uses: anand-kirori-bain/node-js-template@v1.0.5
+      uses: anand-kirori-bain/node-js-template@main
       with:
         host: ${{ secrets.SONAR_HOST_URL }}
         login: ${{ secrets.SONAR_TOKEN }}
