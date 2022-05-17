@@ -23,7 +23,7 @@ COPY sonarqube.cer /opt/sonarqube.cer
 RUN keytool -import -trustcacerts -keystore /opt/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 RUN keytool -import -trustcacerts -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 
-ENV SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=/opt/cacerts -Djavax.net.ssl.keyStore=/opt/cacerts -Djavax.net.debug=all"
+ENV SONAR_SCANNER_OPTS="-Djavax.net.ssl.trustStore=$JAVA_HOME/jre/lib/security/cacerts -Djavax.net.ssl.keyStore=/opt/cacerts -Djavax.net.debug=all"
 
 RUN chmod +x /entrypoint.sh
 
