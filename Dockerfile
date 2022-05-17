@@ -19,9 +19,9 @@ ENV NODE_PATH "/usr/lib/node_modules/"
 
 COPY entrypoint.sh /entrypoint.sh
 
-COPY sonarqube.cer /sonarqube.cer
+COPY sonarqube.cer /opt/sonarqube.cer
 
-RUN keytool -import -trustcacerts -keystore cacerts -storepass changeit -noprompt -alias sonarqube -file sonarqube.cer
+RUN keytool -import -trustcacerts -keystore cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 
 RUN chmod +x /entrypoint.sh
 
