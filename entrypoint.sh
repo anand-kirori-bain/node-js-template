@@ -28,7 +28,7 @@ if [[ ! -f "${GITHUB_WORKSPACE}/sonar-project.properties" ]]; then
     -Dsonar.password=${SONAR_PASSWORD} \
     -Dsonar.sources=. \
     -Dsonar.sourceEncoding=UTF-8 \
-    -Djavax.net.ssl.trustStore="\opt\security\cacerts" \
+    -Djavax.net.ssl.trustStore="/opt/cacerts" \
     -Djavax.net.ssl.trustStorePassword=changeit
 else
   sonar-scanner \
@@ -36,6 +36,6 @@ else
     -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     -Dsonar.login=${INPUT_LOGIN} \
     -Dsonar.password=${SONAR_PASSWORD} \
-    -Djavax.net.ssl.trustStore="\opt\security\cacerts" \
+    -Djavax.net.ssl.trustStore="/opt/cacerts" \
     -Djavax.net.ssl.trustStorePassword=changeit
 fi
