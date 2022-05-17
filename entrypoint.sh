@@ -18,7 +18,7 @@ if [[ ! -f "${GITHUB_WORKSPACE}/sonar-project.properties" ]]; then
   [[ -z ${INPUT_PROJECTKEY} ]] && SONAR_PROJECTKEY="${REPOSITORY_NAME}" || SONAR_PROJECTKEY="${INPUT_PROJECTKEY}"
   [[ -z ${INPUT_PROJECTNAME} ]] && SONAR_PROJECTNAME="${REPOSITORY_NAME}" || SONAR_PROJECTNAME="${INPUT_PROJECTNAME}"
   [[ -z ${INPUT_PROJECTVERSION} ]] && SONAR_PROJECTVERSION="" || SONAR_PROJECTVERSION="${INPUT_PROJECTVERSION}"
-  sonar-scanner \
+  sonar-scanner -X \
     -Dsonar.host.url=${INPUT_HOST} \
     -Dsonar.projectKey=${SONAR_PROJECTKEY} \
     -Dsonar.projectName=${SONAR_PROJECTNAME} \
@@ -31,7 +31,7 @@ if [[ ! -f "${GITHUB_WORKSPACE}/sonar-project.properties" ]]; then
     -Djavax.net.ssl.trustStore="/opt/cacerts" \
     -Djavax.net.ssl.trustStorePassword=changeit
 else
-  sonar-scanner \
+  sonar-scanner -X \
     -Dsonar.host.url=${INPUT_HOST} \
     -Dsonar.projectBaseDir=${INPUT_PROJECTBASEDIR} \
     -Dsonar.login=${INPUT_LOGIN} \
