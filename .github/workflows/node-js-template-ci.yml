@@ -22,6 +22,11 @@ jobs:
     steps:
     - name: Checkout Repo
       uses: actions/checkout@v3
+    - name: Scan Repo in SonarQube
+      uses: anand-kirori-bain/node-js-template@v1.0.0
+      with:
+        host: ${{ secrets.SONAR_HOST_URL }}
+        login: ${{ secrets.SONAR_TOKEN }}
     #- name: Scan Repo in SonarQube
     #  uses: sonarsource/sonarqube-scan-action@master
     #  env:
