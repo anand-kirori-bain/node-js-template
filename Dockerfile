@@ -20,9 +20,6 @@ ENV NODE_PATH "/usr/lib/node_modules/"
 COPY entrypoint.sh /entrypoint.sh
 
 COPY sonarqube.cer /opt/sonarqube.cer
-
-RUN keytool -list -v -cacerts $JAVA_HOME/jre/lib/security/cacerts
-
 RUN keytool -import -trustcacerts -keystore /opt/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 RUN keytool -import -trustcacerts -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -noprompt -alias sonarqube -file /opt/sonarqube.cer
 
