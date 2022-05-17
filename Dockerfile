@@ -5,7 +5,7 @@ LABEL "com.github.actions.description"="Scan your code with SonarQube Scanner to
 LABEL "com.github.actions.icon"="check"
 LABEL "com.github.actions.color"="green"
 
-LABEL version="0.0.2"
+LABEL version="1.0.3"
 LABEL repository="https://github.com/anand-kirori-bain/node-js-template"
 LABEL homepage="https://bain.github.io"
 LABEL maintainer="anand-kirori-bain"
