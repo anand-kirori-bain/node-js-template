@@ -10,7 +10,8 @@ LABEL repository="https://github.com/anand-kirori-bain/node-js-template"
 LABEL homepage="https://bain.github.io"
 LABEL maintainer="anand-kirori-bain"
 
-RUN npm install --silent --save-dev -g typescript@3.5.2 && \
+RUN apk add --update nodejs npm && \
+  npm install --silent --save-dev -g typescript@3.5.2 && \
   npm config set unsafe-perm true && \
   apk add --no-cache ca-certificates jq
 
